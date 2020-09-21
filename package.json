@@ -1,0 +1,60 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/electron.js",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "file-saver": "^2.0.2",
+    "office-ui-fabric-react": "^7.137.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "react-select": "^3.1.0",
+    "reactstrap": "^8.5.1",
+    "xlsx": "^0.16.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "cleanBuild": "rimraf ./build/*",
+    "build": "npm run cleanBuild && set \"GENERATE_SOURCEMAP=false\" && react-scripts build ",
+    "test": "react-scripts test",
+    "electron": "electron .",
+    "eject": "react-scripts eject",
+    "deploy": "sh ./deploy-surge.sh",
+    "dist": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^10.1.1",
+    "electron-builder": "^22.8.1"
+  },
+  "build": {
+    "appId": "com.electron.app",
+    "win": {
+      "target": "portable"
+    },
+    "portable": {
+      "unicode": false,
+      "artifactName": "my_electron_app.exe"
+    }
+  }
+}

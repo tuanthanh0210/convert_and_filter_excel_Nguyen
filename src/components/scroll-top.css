@@ -1,0 +1,7 @@
+.scroll-top-button {
+    position: fixed;
+    z-index: 99999999;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
